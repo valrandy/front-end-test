@@ -1,7 +1,8 @@
 # Qudini Code Test
 
 ## The Simple Queue App
-The structure of this application is based off directives acting as components handling their own data.
+The structure of this application is based off directives acting as components handling their own data. The backend is a simple
+NodeJS server serving in memory JSON objects. All the dependencies are versioned for your convenience :).
 
 ## Requirements
 The application works in the following way:
@@ -15,13 +16,6 @@ The application works in the following way:
 - The list of customers in queue and customers served should be updated to always show the correct status - without refreshing the browser
 
 Feel free to implement features in your own way - but the general structure of the app should stay the same.
-
-## Ready, get set - GO!
-Install dependencies
-``` npm install ```
-
-Start the server
-``` node server.js ```
 
 ## The API
 This is a json api
@@ -46,3 +40,7 @@ The code is structured as component directives that each
 4. QA time! We'd want to make absolutely sure that all the requirements are implemented correctly, are they?
 5. Bonus: The look is... a bit too bare for our taste - can you add some styling please? Feel free to improvise here but we'd like it to be in SASS.
 6. Bonus: We'd love to really optimize the page load speed - ideally we'd only want to serve one js file. Is this something you can do?
+
+## Ready, get set - GO!
+Start the server
+``` node server.js ```
