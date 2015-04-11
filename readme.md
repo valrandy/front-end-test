@@ -44,3 +44,6 @@ The code is structured as component directives that each
 ## Ready, get set - GO!
 Start the server
 ``` node server.js ```
+
+App is at 127.0.0.1:1337
+Good luck!
