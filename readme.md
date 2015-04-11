@@ -31,7 +31,7 @@ This is a json api
  - POST /api/customer/add - Adds a customer
     - example param: {name: 'Roger Moore', product: {name: 'Gun repair'} }
 
- - POST /api/customer/serve - Adds a customer
+ - POST /api/customer/serve - Serves a customer
     - example param: {id: '71a06844-eca5-46d3-98a0-4a6b8beb1440'}
 
  - DELETE /api/customer/remove - remove a customer
