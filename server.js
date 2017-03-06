@@ -24,7 +24,7 @@ function serveCustomer(id){
         }else{
             return true;
         }
-    })
+    });
 }
 
 function addCustomer(customer){
@@ -40,15 +40,15 @@ function removeCustomer(targetCustomerId){
 
 
 var app = express();
-app.use(bodyParser.urlencoded({ extended: false }))
-app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 app.get('/api/customers', function(req,res){
     res.send(customers);
-})
+});
 app.get('/api/customers/served', function(req,res){
     res.send(servedCustomers);
-})
+});
 app.post('/api/customer/add', function(req,res){
     addCustomer(req.body);
     res.end('Customer was added!');
