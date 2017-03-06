@@ -1,15 +1,15 @@
 (function () {
 
     angular.module('qudini.QueueApp', [])
-        .controller('QueueCtrl', QueueCtrl);
+        .controller('QueueController', QueueController);
 
-    QueueCtrl.$inject = ['$scope', '$http'];
+    QueueController.$inject = ['$scope', '$http'];
 
     /**
      * Bonus points - manipulating the without waiting for the
      * server request
      */
-    function QueueCtrl($scope, $http) {
+    function QueueController($scope, $http) {
 
         $scope.customers = [];
         $scope.customersServed = [];
@@ -43,4 +43,4 @@
         }
     }
 
-})()
+})();
