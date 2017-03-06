@@ -36,7 +36,7 @@ This is a JSON api:
  - `POST /api/customer/add`: adds a customer
     - example body: `{name: 'Roger Moore', product: {name: 'Gun repair'}}`
 
- - `POST /api/customer/serve`: serves a customer
+ - `PUT /api/customer/serve`: serves a customer
     - example body: `{id: '71a06844-eca5-46d3-98a0-4a6b8beb1440'}`
 
  - `DELETE /api/customer/remove`: removes a customer

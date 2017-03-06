@@ -53,7 +53,7 @@ app.post('/api/customer/add', function(req,res){
     addCustomer(req.body);
     res.end('Customer was added!');
 });
-app.post('/api/customer/serve', function(req,res){
+app.put('/api/customer/serve', function(req,res){
     serveCustomer(req.body.id);
     res.end('Customer was served!');
 });
