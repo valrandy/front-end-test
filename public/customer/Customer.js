@@ -1,6 +1,9 @@
 (function () {
+
     angular.module('qudini.QueueApp', [])
-        .directive('customer', Customer)
+        .directive('customer', Customer);
+
+    Customer.$inject = ['$http'];
 
     /**
      * The <customer> directive is responsible for:
@@ -14,7 +17,6 @@
             restrict: 'E',
             scope:{
                 customer: '=',
-
                 onRemoved: '&',
                 onServed: '&'
             },
@@ -31,11 +33,11 @@
                         params: {id: scope.customer.id}
                     }).then(function(res){
                         scope.onRemoved()()
-                    })
+                    });
                 };
+
             }
         }
     }
 
 })()
-
