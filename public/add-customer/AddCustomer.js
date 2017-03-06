@@ -1,7 +1,9 @@
 (function () {
-    angular.module('qudini.QueueApp')
-        .directive('addCustomer', AddCustomer)
 
+    angular.module('qudini.QueueApp')
+        .directive('addCustomer', AddCustomer);
+
+    AddCustomer.$inject = ['$http'];
 
     function AddCustomer($http){
         return {
@@ -20,10 +22,10 @@
 
                 scope.addCustomer = function(){
 
-                }
+                };
+
             }
         }
     }
 
 })()
-
