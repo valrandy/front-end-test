@@ -32,7 +32,7 @@
                         url: '/api/customer/remove',
                         params: {id: scope.customer.id}
                     }).then(function(res){
-                        scope.onRemoved()()
+                        scope.onRemoved();
                     });
                 };
 

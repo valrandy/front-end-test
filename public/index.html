@@ -11,17 +11,17 @@
 <body ng-app="qudini.QueueApp" ng-controller="QueueCtrl">
 
     <h2>Add Customer</h2>
-    <add-customer on-added="onCustomerAdded"></add-customer>
+    <add-customer on-added="onCustomerAdded()"></add-customer>
     <h2>Queueing Customers</h2>
     <ul>
         <li ng-repeat="customerData in customers">
-            <customer customer="customerData" on-served="onCustomerServed" on-removed="onCustomerRemoved"></customer>
+            <customer customer="customerData" on-served="onCustomerServed()" on-removed="onCustomerRemoved()"></customer>
         </li>
     </ul>
     <h2>Served customers</h2>
     <ul>
         <li ng-repeat="customerData in customersServed">
-            <customer customer="customerData" on-served="onCustomerServed" on-removed="onCustomerRemoved"></customer>
+            <customer customer="customerData" on-served="onCustomerServed()" on-removed="onCustomerRemoved()"></customer>
         </li>
     </ul>
 
