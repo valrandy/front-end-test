@@ -2,7 +2,7 @@
 
 ## The Simple Queue App
 The structure of this application is based off directives acting as components handling their own data. The backend is a simple
-NodeJS server serving in memory JSON objects. All the dependencies are versioned for your convenience :).
+NodeJS server serving in memory JSON objects.
 
 ## Requirements
 The application works in the following way:
@@ -42,8 +42,8 @@ The code is structured as component directives that each
 6. Bonus: We'd love to really optimize the page load speed - ideally we'd only want to serve one js file. Is this something you can do?
 
 ## Ready, get set - GO!
-Start the server
-``` node server.js ```
 
-App is at 127.0.0.1:1337
-Good luck!
+- Install the app: `npm install`
+- Start the server: `npm start`
+
+App is at http://127.0.0.1:1337, good luck!
