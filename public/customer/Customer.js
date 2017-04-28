@@ -1,41 +1,40 @@
 (function () {
-    angular.module('qudini.QueueApp', [])
-        .directive('customer', Customer)
 
-    /**
-     * The <customer> directive is responsible for:
-     * - serving customer
-     * - calculating queued time
-     * - removing customer from the queue
-     */
-    function Customer($http){
+	angular.module('qudini.QueueApp', [])
+		.directive('customer', Customer);
 
-        return{
-            restrict: 'E',
-            scope:{
-                customer: '=',
+	Customer.$inject = ['$http'];
 
-                onRemoved: '&',
-                onServed: '&'
-            },
-            templateUrl: '/customer/customer.html',
-            link: function(scope){
+	/**
+	* The <customer> directive is responsible for:
+	* - serving customer
+	* - calculating queued time
+	* - removing customer from the queue
+	*/
+	function Customer($http) {
+		return {
+			restrict: 'E',
+			scope: {
+				customer: '=',
+				onRemoved: '&',
+				onServed: '&'
+			},
+			templateUrl: '/customer/customer.html',
+			link: function (scope) {
 
-                // calculate how long the customer has queued for
-                scope.queuedTime = new Date() - new Date(scope.customer.joinedTime);
+				// calculate how long the customer has queued for
+				scope.queuedTime = new Date() - new Date(scope.customer.joinedTime);
 
-                scope.remove = function(){
-                    $http({
-                        method: 'DELETE',
-                        url: '/api/customer/remove',
-                        params: {id: scope.customer.id}
-                    }).then(function(res){
-                        scope.onRemoved()()
-                    })
-                };
-            }
-        }
-    }
+				scope.remove = function () {
+					$http.delete('/api/customer/remove', { params: {
+						id: scope.customer.id
+					} }).then(function (res) {
+						scope.onRemoved();
+					});
+				};
 
-})()
+			}
+		};
+	}
 
+})();

@@ -1,29 +1,31 @@
 (function () {
-    angular.module('qudini.QueueApp')
-        .directive('addCustomer', AddCustomer)
 
+	angular.module('qudini.QueueApp')
+		.directive('addCustomer', AddCustomer);
 
-    function AddCustomer($http){
-        return {
-            restrict: 'E',
-            scope:{
-                onAdded: '&'
-            },
-            templateUrl:'/add-customer/add-customer.html',
-            link: function(scope){
+	AddCustomer.$inject = ['$http'];
 
-                scope.products = [
-                    {name: 'Grammatical advice'},
-                    {name: 'Magnifying glass repair'},
-                    {name: 'Cryptography advice'}
-                ];
+	function AddCustomer($http) {
+		return {
+			restrict: 'E',
+			scope: {
+				onAdded: '&'
+			},
+			templateUrl: '/add-customer/add-customer.html',
+			link: function (scope) {
 
-                scope.addCustomer = function(){
+				scope.products = [
+					{ name: 'Grammatical advice' },
+					{ name: 'Magnifying glass repair' },
+					{ name: 'Cryptography advice' }
+				];
 
-                }
-            }
-        }
-    }
+				scope.addCustomer = function () {
 
-})()
+				};
 
+			}
+		}
+	};
+
+})();
