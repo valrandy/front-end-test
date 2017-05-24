@@ -21,7 +21,12 @@
 				];
 
 				scope.addCustomer = function () {
-
+					var params = JSON.stringify({'name': scope.name, 'product': {'name': scope.product.name}})
+					$http.post('/api/customer/add', params).then(function (res) {
+						scope.onAdded();
+						scope.name = '';
+						scope.product = '';
+					});
 				};
 
 			}

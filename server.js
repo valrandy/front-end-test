@@ -56,7 +56,7 @@ app.put('/api/customer/serve', function (req, res) {
 	res.end('Customer was served!');
 });
 app.delete('/api/customer/remove', function (req, res) {
-	removeCustomer(req.query.id);
+	removeCustomer(req.body.id);
 	res.end('Customer was removed!');
 });
 

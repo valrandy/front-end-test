@@ -1,6 +1,6 @@
 (function () {
 
-	angular.module('qudini.QueueApp', [])
+	angular.module('qudini.QueueApp')
 		.directive('customer', Customer);
 
 	Customer.$inject = ['$http'];
@@ -25,11 +25,25 @@
 				// calculate how long the customer has queued for
 				scope.queuedTime = new Date() - new Date(scope.customer.joinedTime);
 
-				scope.remove = function () {
-					$http.delete('/api/customer/remove', { params: {
+				scope.serve = function () {
+					$http.put('/api/customer/serve', {
 						id: scope.customer.id
-					} }).then(function (res) {
-						scope.onRemoved();
+					}).then(function (res) {
+						scope.onServed();
+					});
+				};
+				scope.remove = function () {
+					$http({
+							url: '/api/customer/remove',
+							method: 'DELETE',
+							data: {
+									id: scope.customer.id
+							},
+							headers: {
+									"Content-Type": "application/json;charset=utf-8"
+							}
+					}).then(function(res) {
+							scope.onRemoved();
 					});
 				};
 
